@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+
+
+      <main>
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-8">
+              <div class="card shadow-lg border-0 rounded-lg mt-5">
+  
+  
+                <div class="card-header" style="background-color:#0D1A81;" >
+                  <h2 class="text-center font-weight-light my-4"style="color:white;" >Get In Touch</h2>
+                </div>
+  
+                <div class="card-body">
+                    <form id="contact-form" method="POST" action="{% url 'resume_app:sent_email' %}">
+                        {% csrf_token %}
+                        <a name="contact"></a>
+        
+                        <label>Name</label>
+                        <input required class="form-control" type="text" name="name">
+        
+                        <label>Subject</label>
+                        <input required class="form-control" type="text" name="subject">
+        
+                        <label>Email</label>
+                        <input required class="form-control" type="text" name="email">
+        
+                        <label>Message</label>
+                        <textarea required class="form-control" name="message"></textarea>
+        
+                        <input id="submit-btn" style="background-color:#0D1A81;" class="btn btn-block btn-info mt-2" type="submit" value="SEND MESSAGE">
+                    </form>
+                 
+  
+                </div>
+  
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+ 
+
+
+
+
+{% endblock %}
