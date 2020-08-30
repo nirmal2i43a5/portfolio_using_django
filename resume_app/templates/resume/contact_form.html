@@ -21,17 +21,17 @@
                         {% csrf_token %}
                         <a name="contact"></a>
                         <strong>
-                          <label>Name</label></strong>
-                        <input required class="form-control" type="text" name="name"><br>
+                          <label for="nme">Name</label></strong>
+                        <input required  class="form-control" id="nme" type="text" name="name"><br>
                           <strong>
-                            <label>Subject</label></strong>
-                        <input required class="form-control" type="text" name="subject"><br>
+                            <label for="sub">Subject</label></strong>
+                        <input required class="form-control" id="sub" type="text" name="subject"><br>
         
-                        <strong><label>Email</label></strong>
-                        <input required class="form-control" type="text" name="email"><br>
+                        <strong><label for="eml">Email</label></strong>
+                        <input required class="form-control" id="eml" type="text" name="email"><br>
         
-                          <strong>   <label>Message</label></strong>
-                        <textarea required class="form-control" name="message"></textarea><br>
+                          <strong>   <label for="msg">Message</label></strong>
+                        <textarea required id="msg" class="form-control form-control-lg" name="message"></textarea><br>
         
                         <input id="submit-btn" style="background-color:#0D1A81;" class="btn btn-lg btn-block btn-info mt-2" type="submit" value="SEND MESSAGE">
                     </form>
