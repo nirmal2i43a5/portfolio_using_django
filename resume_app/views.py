@@ -6,6 +6,7 @@ from django.template.loader import get_template
 from django.views import View
 from xhtml2pdf import pisa
 from django.conf import settings
+import os
 
 
 
@@ -13,7 +14,7 @@ def render_to_pdf(template_src, context_dict={}):#context_dict is the data we wa
 	template = get_template(template_src)
 	html  = template.render(context_dict)
 	result = BytesIO()
-	pdf = pisa.pisaDocument(BytesIO(html.encode("ISO-8859-1")), result, link_callback=link_callback)
+	pdf = pisa.pisaDocument(BytesIO(html.encode("ISO-8859-1")), result, link_callback=link_callback)#link_callback receive path for static file
 	if not pdf.err:
 		return HttpResponse(result.getvalue(), content_type='application/pdf')
 
@@ -62,6 +63,7 @@ def link_callback(uri, rel):
         path = os.path.join(mRoot, uri.replace(mUrl, ""))
     elif uri.startswith(sUrl):
         path = os.path.join(sRoot, uri.replace(sUrl, ""))
+        print("I am here-------------",path)
     else:
         return uri  # handle absolute uri (ie: http://some.tld/foo.png)
 
