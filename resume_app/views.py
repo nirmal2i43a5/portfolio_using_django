@@ -33,15 +33,18 @@ class downloadPortfolio(View):
 
 
 
-'''
+
 #Opens up page as PDF(use this if you want to view page)
 
 class ViewPDF(View):
 	def get(self, request, *args, **kwargs):
 
-		pdf = render_to_pdf('app/pdf_template.html', data)
+		# pdf = render_to_pdf('resume/pdf.html', data)
+		pdf = render_to_pdf('resume/pdf.html')
 		return HttpResponse(pdf, content_type='application/pdf')
-'''
+
+
+
 
 
 def home(request):
