@@ -134,7 +134,7 @@ MEDIA_URL = '/media/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR,'media/')
 
-STATICFILES_DIRS = (os.path.join(BASE_DIR,'static'),)#for global static i.e for deployment
+# STATICFILES_DIRS = (os.path.join(BASE_DIR,'static'),)#for global static i.e for deployment
 
 
 
