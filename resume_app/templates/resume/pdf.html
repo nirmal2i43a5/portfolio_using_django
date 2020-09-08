@@ -1,7 +1,193 @@
+
 {% extends 'base.html' %}
+{% load static %}
 
-{% block content%}
+{% block title%}Portfolio Pdf{% endblock %}
+{% block content %}
+<!-- https://www.bedjango.com/blog/how-generate-pdf-django-weasyprint/ -->
 
-<img src="static/images/portfolio.png" >
+<!-- <img src="static/images/portfolio.png" > -->
+
+<style>
+  
+    img{zoom:150%; }
+    
+   @page{    border-style-color:grey;} #profile-pic{
+        width:130px;
+        height: 130px;
+    
+      
+    }
+
+    .row{
+        background-color: green;
+    }
+    
+    .column1{
+     
+        flex: 50%;
+        padding:20px 0px 30px 20px;
+        margin-right:540px;
+    }
+
+    .column2{
+        
+
+        background-color: white;
+        margin-bottom:100px;
+        
+        
+
+    }
+    h1{
+        background-color:#0D1A81;
+        color:white;
+        padding:10px 0px 0px 15px;
+     
+        text-align: center;
+    }
+
+    p,li {
+        font-size: 14px;
+    }
+  
+
+
+    /* Create two equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    height: 300px; /* Should be removed. Only for demonstration */
+  }
+  
+
+
+  .col2{
+      margin-left:100px;
+     
+   
+  }
+
+
+  @page {
+    size: letter portrait;
+    
+    @frame header_frame {           /* Static frame */
+        -pdf-frame-content: header_content;
+        left: 50pt; width: 512pt; top: 50pt; height: 40pt;
+    }
+    @frame col1_frame {             /* Content frame 1 */
+        left: 44pt; width: 245pt; top: 90pt; height: 632pt;
+    }
+    @frame col2_frame {             /* Content frame 2 */
+        left: 323pt; width: 245pt; top: 90pt; height: 632pt;
+    }
+    @frame footer_frame {           /* Static frame */
+        -pdf-frame-content: footer_content;
+        left: 50pt; width: 512pt; top: 772pt; height: 20pt;
+    }
+}
+
+</style>
+
+
+ 
+  
+  
+        <img src="static/images/nirmalpandey.jpg" id="profile-pic" alt=""><br><hr>
+
+
+       </div>
+        <strong><span style="font-size:20px;color: #DAA520;">Hi,I'm Nirmal Pandey.</strong> <span style="font-size: 15px;">I love coding, doing research,and collaborating with teams.</span style="font-size: 15px;color:"> </span>
+        
+     
+     
+
+
+
+ 
+<hr>
+<div>
+
+<h1>STRENGTHS</h1>
+<ul>
+    <li> Oral and Written Communication</li>
+    <li>Fast Learner</li>
+    <li>Team Buildings</li>
+    <li>Committed To LifeLong Learning</li>
+    <li>Reliable and Consistent</li>
+</ul>
+
+
+
+</div><hr>
+
+<h1>EDUCATION</h1>
+
+<ul>
+    <li>I am currently studying  <strong>BICT</strong>
+        in <strong>VIRINCHI COLLEGE . </strong>   <a href="https://virinchicollege.edu.np/" >https://virinchicollege.edu.np/</a></li>
+        <li>Ongoing Fourth Semester</li>
+</ul>
+
+
+ 
+<hr>
+<div>
+    <h1>LANGUAGES</h1>
+    <ul>
+        <li>Python</li>
+        <li>JavaScript</li>
+        <li>HTML & CSS</li>
+        <li>C</li>
+        <li>Java</li>
+    </ul>
+</div>
+
+
+<div>
+
+    <h1>SKILLS</h1>
+
+
+    <ul>
+        <li>Django</li>
+        <li>Django Rest</li>
+        <li>Mysql</li>
+        <li>React</li>
+        <li>Git</li>
+
+     
+        <li>AWS(EC2,S3,RDS)</li>
+        <li>Linux(Ubuntu)</li>
+        <li>Wordpress</li>
+   
+    </ul>
+</div>
+
+
+<hr>
+<h1>SHORT TERM GOAL</h1>
+
+
+<p>Besides building projects,I would like to learn new set of skills which might assists me to enter the position where I can be the part of bigger teams and learn extra from other with more experienced than myself, and implement such concepts in real world project.</p>
+
+<hr>
+<h1>HOW I LEARN</h1>
+
+<ul >
+    <li> <span style="color:#DAA520;font-size:18px;"> </span>Reverse Engineer And Build Ugly Prototype First</li>
+    <li> <span style="color:#DAA520;font-size:18px;"> </span>If I want to learn about the pre-existing product then I break the various components piece by piece and work on separate piece of component to make it work,and also try to find out why things work the way they do.</li>
+    <li> <span style="color:#DAA520;font-size:18px;"> </span> Documentation,videos,books,and somewhat blogs is the main reference for me to learn.</li>
+</ul>
+
+
+
+</div>
+
+
 
 {% endblock %}
+
+
