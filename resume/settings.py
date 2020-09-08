@@ -123,9 +123,12 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = '/home/nirmal/Documents/Django Project Inventory/django/portfolio/static/images'
+STATIC_ROOT = os.path.join(BASE_DIR,'static/')
 
-STATICFILES_DIRS = (os.path.join(BASE_DIR,'static'),)
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR,'media/')
+
+# STATICFILES_DIRS = (os.path.join(BASE_DIR,'static'),)
 
 
 
