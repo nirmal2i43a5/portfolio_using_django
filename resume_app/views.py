@@ -45,7 +45,6 @@ class ViewPDF(View):
 		return HttpResponse(pdf, content_type='application/pdf')
 
 
-
 def link_callback(uri, rel):
     """
     Convert HTML URIs to absolute system paths so xhtml2pdf can access those
