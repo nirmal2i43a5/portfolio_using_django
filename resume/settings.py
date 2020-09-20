@@ -131,7 +131,7 @@ STATIC_URL = '/static/'
 #     STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # STATIC_ROOT = os.path.join(BASE_DIR,'static')
-STATIC_ROOT = '/home/nirmal/Documents/Django Project Inventory/django/portfolio/static/'
+STATIC_ROOT = '/home/Documents/Django Project Inventory/django/portfolio/static/'
 
 MEDIA_URL = '/media/'
 
