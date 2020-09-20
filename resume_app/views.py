@@ -7,6 +7,7 @@ from django.views import View
 from xhtml2pdf import pisa
 from django.conf import settings
 import os
+from resume_app.models import Profile
 
 
 
@@ -24,8 +25,10 @@ def render_to_pdf(template_src, context_dict={}):#context_dict is the data we wa
 #Automaticly downloads to PDF file
 class downloadPortfolio(View):
 	def get(self, request, *args, **kwargs):
+		data = Profile.objects.all()
+	
 		
-		pdf = render_to_pdf('resume/pdf.html')#last params should to data that i have to render to the particular page but in template  i directly give static link in the 
+		pdf = render_to_pdf('resume/pdf.html',{'profile_data':data})#last params should to data that i have to render to the particular page but in template  i directly give static link in the 
 
 		response = HttpResponse(pdf, content_type='application/pdf')
 		filename = "NirmalPortfolio.pdf"
