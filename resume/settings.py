@@ -25,7 +25,7 @@ from decouple import config
 SECRET_KEY = '69+++shjik6v3$az__%_^pwh&_8dz*g9h3@zs7_ss%m)hc-!8g'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 # ALLOWED_HOSTS = ['*']
 ALLOWED_HOSTS = ['*']
