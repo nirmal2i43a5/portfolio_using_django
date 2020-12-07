@@ -16,7 +16,7 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 from decouple import config
-
+import dj_database_url
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
@@ -49,6 +49,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    
+    #for whitenoise
+      'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'resume.urls'
@@ -72,15 +75,21 @@ TEMPLATES = [
 WSGI_APPLICATION = 'resume.wsgi.application'
 
 
+DATABASES = {
+    'default': dj_database_url.config(
+        default=config('DATABASE_URL')
+    )
+}
+
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
 
 
 # Password validation
@@ -123,23 +132,18 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-# if DEBUG:
-#     STATICFILES_DIRS = [
-#             os.path.join(BASE_DIR, 'static')
-#        ]
-# else:
-#     STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-# STATIC_ROOT = os.path.join(BASE_DIR,'static')
-# STATIC_ROOT = '/home/nirmal/Documents/Django Project Inventory/django/portfolio/static/'#THIS AND above both also does not work in development so i use STATICFILES_DIRS
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')#for heroku staticfiles
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR,'static')
+]
 
 MEDIA_URL = '/media/'
 
-MEDIA_ROOT =''
-
-
-STATICFILES_DIRS = (os.path.join(BASE_DIR,'static'),)#for global static i.e for deployment
-
+MEDIA_ROOT = ''
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
@@ -147,7 +151,6 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = "nirmalpandey27450112@gmail.com"##sender's email-id but i use dif email but work in this case
 EMAIL_HOST_PASSWORD = "ugzzjfmgzldsfpdn"
-
 
 
 
