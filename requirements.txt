@@ -5,11 +5,11 @@ django-decouple==2.1
 gunicorn==20.0.4
 html5lib==1.1
 Pillow==7.2.0
-pkg-resources==0.0.0
 PyPDF2==1.26.0
 pytz==2020.1
 reportlab==3.5.56
 six==1.15.0
 sqlparse==0.3.1
 webencodings==0.5.1
+whitenoise==5.2.0
 xhtml2pdf==0.2.4
