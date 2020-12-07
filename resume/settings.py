@@ -25,7 +25,7 @@ import dj_database_url
 SECRET_KEY = '69+++shjik6v3$az__%_^pwh&_8dz*g9h3@zs7_ss%m)hc-!8g'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 # ALLOWED_HOSTS = ['*']
 ALLOWED_HOSTS = ['nirmal-pandey-portfolio.herokuapp.com','127.0.0.1']
