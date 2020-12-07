@@ -96,7 +96,7 @@ from django.template.loader import render_to_string
 def sendEmail(request):
     
 	if request.method == 'POST':
-
+    
 		template = render_to_string('resume/email_msg.html', {
 			'name':request.POST['name'],
 			'email':request.POST['email'],
@@ -106,8 +106,8 @@ def sendEmail(request):
 		email = EmailMessage(
 			request.POST['subject'],
 			template,
-			settings.EMAIL_HOST_USER,
-			['nirmalpandey27450112@gmail.com']
+			settings.EMAIL_HOST_USER,#sender
+			['nirmalpandey27450112@gmail.com']#receiver 
 			)
 
 		email.fail_silently=False
