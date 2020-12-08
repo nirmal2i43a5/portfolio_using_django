@@ -22,7 +22,8 @@ import dj_database_url
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '69+++shjik6v3$az__%_^pwh&_8dz*g9h3@zs7_ss%m)hc-!8g'
+SECRET_KEY = config('SECRET_KEY')
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -149,5 +150,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
+
 EMAIL_HOST_USER = "nirmalpandey27450112@gmail.com"##sender's email-id but i use dif email but work in this case
+
 EMAIL_HOST_PASSWORD = "ugzzjfmgzldsfpdn"
